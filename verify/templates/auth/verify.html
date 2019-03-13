@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% block header %}
+  <h1>
+    {% block title %}Verify{% endblock %}
+  </h1>
+{% endblock %} 
+{% block content %}
+<form accept-charset="UTF-8" method="post">
+  <div class="row">
+    <div class="col-25">
+      <label>Enter your code:</label></div>
+    <div class="col-75">
+      <input name="code" id="code" type="number"></select>
+    </div>
+  </div>
+  <div class="row">
+    <button name="button" type="submit">Verify</button>
+  </div>
+</form>
+{% endblock %}

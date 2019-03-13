@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+{% block head %}
+{{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/intlTelInput.css') }}"
+/>
+{% endblock %} 
+{% block header %}
+<h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %} 
+{% block content %}
+<form method="post">
+  <label for="username">Username</label>
+  <input name="username" id="username" required />
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" required />
+  <label for="phone">Phone number</label>
+  <input type="tel" name="phone" id="phone" required />
+  <label for="channel">Verification method:</label>
+  <label><input type="radio" name="channel" value="sms" checked />SMS</label>
+  <label><input type="radio" name="channel" value="voice" />Call</label>
+  <button name="form-submit" type="submit">Sign Up</button>
+</form>
+<script src="{{ url_for('static',filename='js/intlTelInput.js') }}"></script>
+<script>
+  var input = document.querySelector("#phone");
+  window.intlTelInput(input, {
+    hiddenInput: "full_phone",
+    preferredCountries: ["us", "gb", "co", "de"],
+    utilsScript: "{{ url_for('static',filename='js/utils.js') }}"
+  });
+</script>
+{% endblock %}
