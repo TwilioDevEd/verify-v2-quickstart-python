@@ -1,6 +1,8 @@
 # Verify Quickstart
 
-Simple phone verification with Python, Flask, and Twilio Verify.
+Simple phone verification with Python, Flask, and Twilio Verify. 
+
+Full Quickstart instructions available at https://www.twilio.com/docs/verify/api-beta/quickstarts/python-flask
 
 ## Install
 
