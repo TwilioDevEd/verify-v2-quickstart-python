@@ -51,7 +51,7 @@ def check_verification(phone, code):
             .verification_checks \
             .create(to=phone, code=code)
 
-        if verification_check.valid:
+        if verification_check.status == "approved":
             db = get_db()
             db.execute(
                 'UPDATE user SET verified = 1 WHERE phone_number = ?', 
@@ -59,8 +59,13 @@ def check_verification(phone, code):
             )
             db.commit()
             flash('Your phone number has been verified! Please login to continue.')
+            return redirect(url_for('auth.login'))
+        else:
+            flash('The code you provided is incorrect. Please try again.')
     except Exception as e:
         flash("Error validating code: {}".format(e))
+
+    return redirect(url_for('auth.verify'))
 
 
 @bp.before_app_request
@@ -128,8 +133,7 @@ def verify():
     if request.method == 'POST':
         phone = session.get('phone')
         code = request.form['code']
-        check_verification(phone, code)
-        return redirect(url_for('auth.login'))
+        return check_verification(phone, code)
 
     return render_template('auth/verify.html')
 
