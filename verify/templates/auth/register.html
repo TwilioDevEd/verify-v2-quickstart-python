@@ -1,14 +1,14 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block head %}
 {{ super() }}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/intlTelInput.css') }}"
 />
-{% endblock %} 
+{% endblock %}
 {% block header %}
 <h1>{% block title %}Register{% endblock %}</h1>
-{% endblock %} 
+{% endblock %}
 {% block content %}
 <form method="post">
   <label for="username">Username</label>
@@ -19,7 +19,7 @@
   <input type="tel" name="phone" id="phone" required />
   <label for="channel">Verification method:</label>
   <label><input type="radio" name="channel" value="sms" checked />SMS</label>
-  <label><input type="radio" name="channel" value="voice" />Call</label>
+  <label><input type="radio" name="channel" value="call" />Call</label>
   <button name="form-submit" type="submit">Sign Up</button>
 </form>
 <script src="{{ url_for('static',filename='js/intlTelInput.js') }}"></script>
