@@ -29,7 +29,7 @@ def login_required(view):
 
 
 def start_verification(to, channel='sms'):
-    if channel not in ('sms', 'voice'):
+    if channel not in ('sms', 'call'):
         channel = 'sms'
 
     service = app.config.get("VERIFICATION_SID")
