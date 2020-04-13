@@ -25,9 +25,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Set up project
+    - name: Test
       run: |
-        flask init-db
+        python -m pytest
       env:
         FLASK_APP: verify
         FLASK_ENV: development
