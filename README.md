@@ -32,6 +32,17 @@ Install the dependencies:
     pip install -r requirements.txt
     ```
 
+Copy `.env.example` to `.env` to setup you environment.
+
+    ```
+    cp .env.example .env
+    ```
+
+Edit `.env` to add your Twilio access keys. You'll need to set your `TWILIO_ACCOUNT_SID` and
+`TWILIO_AUTH_TOKEN` from the [Twilio Console](https://www.twilio.com/console).
+For the `VERIFICATION_SID` variable you'll need to provision a
+[Verification Service](https://www.twilio.com/console/verify/services).
+
 ## Run
 
     ```
