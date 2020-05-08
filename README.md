@@ -15,21 +15,7 @@ Simple phone verification with Python, Flask, and Twilio Verify.
 ## Install
 
     ```
-    python3 -m venv venv
-    . venv/bin/activate
-    ```
-
-Or on Windows cmd:
-
-    ```
-    py -3 -m venv venv
-    venv\Scripts\activate.bat
-    ```
-
-Install the dependencies:
-
-    ```
-    pip install -r requirements.txt
+    make install
     ```
 
 Copy `.env.example` to `.env` to setup you environment.
@@ -44,10 +30,8 @@ For the `VERIFICATION_SID` variable you'll need to provision a
 [Verification Service](https://www.twilio.com/console/verify/services).
 
 ## Run
-
     ```
-    flask init-db
-    flask run
+    make serve
     ```
 
 Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in a browser.
