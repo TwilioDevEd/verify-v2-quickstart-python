@@ -1,5 +1,5 @@
-<a href="https://www.twilio.com">
-  <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
+<a  href="https://www.twilio.com">
+<img  src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg"  alt="Twilio"  width="250"  />
 </a>
 
 # Verify Quickstart
@@ -8,37 +8,120 @@
 
 > We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
 
+## About
+
 Simple phone verification with Python, Flask, and Twilio Verify.
 
 [Read the full quickstart here](https://www.twilio.com/docs/verify/api-beta/quickstarts/python-flask)!
 
-## Install
+Implementations in other languages:
 
-    ```
-    make install
-    ```
+| .NET | Java | Ruby | PHP | Node |
+| :--- | :--- | :----- | :-- | :--- |
+| [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-csharp) | [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-java)  | [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-rails)    | [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-php) | [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-node)  |
 
-Copy `.env.example` to `.env` to setup you environment.
+<!--
+### How it works
 
-    ```
-    cp .env.example .env
-    ```
+**TODO: Describe how it works**
+-->
 
-Edit `.env` to add your Twilio access keys. You'll need to set your `TWILIO_ACCOUNT_SID` and
-`TWILIO_AUTH_TOKEN` from the [Twilio Console](https://www.twilio.com/console).
-For the `VERIFICATION_SID` variable you'll need to provision a
-[Verification Service](https://www.twilio.com/console/verify/services).
+## Set up
 
-## Run
-    ```
-    make serve
-    ```
+### Requirements
 
-Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in a browser.
+- [Python](https://www.python.org/downloads) version >= **3.6.x**.
+- A Twilio account - [sign up](https://www.twilio.com/try-twilio)
 
-## Meta
+### Twilio Account Settings
 
-* No warranty expressed or implied. Software is as is. Diggity.
-* The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
-* [MIT License](http://www.opensource.org/licenses/mit-license.html)
-* Lovingly crafted by Twilio Developer Education.
+This application should give you a ready-made starting point for writing your
+own appointment reminder application. Before we begin, we need to collect
+all the config values we need to run the application:
+
+| Config&nbsp;Value | Description                                                                                                                                                  |
+| :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Account&nbsp;Sid  | Your primary Twilio account identifier - find this [in the Console](https://www.twilio.com/console).                                                         |
+| Auth&nbsp;Token   | Used to authenticate - [just like the above, you'll find this here](https://www.twilio.com/console).                                                         |
+| Verification&nbsp;Sid |  For Verification Service SID. You can generate one [here](https://www.twilio.com/console/verify/services) |
+
+### Local development
+
+After the above requirements have been met:
+
+1. Clone this repository and `cd` into it
+
+   ```bash
+   git clone git@github.com:TwilioDevEd/verify-v2-quickstart-python.git
+   cd verify-v2-quickstart-python
+   ```
+
+1. Prepare the environment and install dependencies
+
+   ```bash
+   make install
+   ```
+
+1. Set your environment variables
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables.
+
+1. Run the application
+
+   ```bash
+   make serve
+   ```
+
+   This will start a development server. It will reload whenever you change any files.
+
+1. Navigate to [http://localhost:5000](http://localhost:5000)
+
+That's it!
+
+### Tests
+
+You can run the tests locally by typing:
+
+```bash
+python manage.py test
+```
+
+### Cloud deployment
+
+Additionally to trying out this application locally, you can deploy it to a variety of host services. Here is a small selection of them.
+
+Please be aware that some of these might charge you for the usage or might make the source code for this application visible to the public. When in doubt research the respective hosting service first.
+
+| Service                           |                                                                                                                                                                |
+| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Heroku](https://www.heroku.com/) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TwilioDevEd/verify-v2-quickstart-python/tree/master) |
+
+**Some notes:**
+
+- For Heroku, please [check this](https://devcenter.heroku.com/articles/django-app-configuration) to properly configure the project for deployment.
+- [Glitch](https://glitch.com/) is not included because it only supports NodeJS officially. Instead, you can try [PythonAnywhere](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/) which is a similar alternative por Python projects.
+- [Zeit Now](https://zeit.co) is also not included because it uses a serverless architecture which doesn't work with frameworks such as Django.
+
+## Resources
+
+- The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
+
+## Contributing
+
+This template is open source and welcomes contributions. All contributions are subject to our [Code of Conduct](https://github.com/twilio-labs/.github/blob/master/CODE_OF_CONDUCT.md).
+
+[Visit the project on GitHub](https://github.com/twilio-labs/sample-template-django)
+
+## License
+
+[MIT](http://www.opensource.org/licenses/mit-license.html)
+
+## Disclaimer
+
+No warranty expressed or implied. Software is as is.
+
+[twilio]: https://www.twilio.com
