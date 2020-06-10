@@ -56,13 +56,13 @@ After the above requirements have been met:
    cd verify-v2-quickstart-python
    ```
 
-1. Prepare the environment and install dependencies
+2. Prepare the environment and install dependencies
 
    ```bash
    make install
    ```
 
-1. Set your environment variables
+3. Set your environment variables
 
    ```bash
    cp .env.example .env
@@ -70,7 +70,13 @@ After the above requirements have been met:
 
    See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables.
 
-1. Run the application
+4. Set the database
+
+   ```bash
+   make serve-setup
+   ```
+
+5. Run the application
 
    ```bash
    make serve
@@ -78,9 +84,17 @@ After the above requirements have been met:
 
    This will start a development server. It will reload whenever you change any files.
 
-1. Navigate to [http://localhost:5000](http://localhost:5000)
+6. Navigate to [http://localhost:5000](http://localhost:5000)
 
 That's it!
+
+### Docker
+
+If you have [Docker](https://www.docker.com/) already installed on your machine, you can use our `docker-compose.yml` to setup your project.
+
+1. Make sure you have the project cloned.
+2. Setup the `.env` file as outlined in the [Local Development](#local-development) steps.
+3. Run `docker-compose up`.
 
 ### Tests
 
