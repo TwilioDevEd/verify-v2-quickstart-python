@@ -1,14 +1,25 @@
+.PHONY: venv install
 UNAME := $(shell uname)
-install:
+venv:
 ifeq ($(UNAME), Windows)
-	py -3 -m venv venv; venv\Scripts\activate.bat;
+	py -3 -m venv venv;
 else
-	virtualenv venv; source ./venv/bin/activate;
+	python3 -m venv venv
 endif
-	pip3 install -r requirements.txt
+
+install: venv
+ifeq ($(UNAME), Windows)
+	venv\Scripts\activate.bat; \
+	pip3 install -r requirements.txt;
+else
+	. venv/bin/activate; \
+	pip3 install -r requirements.txt;
+endif
 
 serve-setup:
-	flask init-db; flask run;
-open-browser:
-	python3 -m webbrowser "http://127.0.0.1:5000"; 
-serve: open-browser serve-setup
+	. venv/bin/activate; \
+	flask init-db;
+
+serve:
+	. venv/bin/activate; \
+	flask run --host=0.0.0.0;
