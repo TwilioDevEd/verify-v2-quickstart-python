@@ -111,7 +111,7 @@ def register():
         elif db.execute(
             'SELECT * FROM user WHERE phone_number = ?', (phone,)
         ).fetchone() is not None:
-            error = 'Phone {0} is already in use. Please, Use another phone number'.format(phone)
+            error = 'Phone {0} is already in use. Please, use another phone number'.format(phone)
 
         if error is None:
             session['phone'] = phone
