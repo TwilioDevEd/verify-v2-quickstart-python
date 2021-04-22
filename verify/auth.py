@@ -108,6 +108,10 @@ def register():
             'SELECT id FROM user WHERE username = ?', (username,)
         ).fetchone() is not None:
             error = 'User {0} is already registered.'.format(username)
+        elif db.execute(
+            'SELECT * FROM user WHERE phone_number = ?', (phone,)
+        ).fetchone() is not None:
+            error = 'Phone {0} is already in use. Use another phone number'.format(phone)
 
         if error is None:
             session['phone'] = phone
