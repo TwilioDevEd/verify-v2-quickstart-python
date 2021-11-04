@@ -31,7 +31,6 @@ jobs:
         python -m pytest
       env:
         FLASK_APP: verify
-        FLASK_ENV: development
         SECRET_KEY: some_secret
         TWILIO_ACCOUNT_SID: sid
         TWILIO_AUTH_TOKEN: token
