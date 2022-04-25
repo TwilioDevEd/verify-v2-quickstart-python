@@ -26,7 +26,7 @@ Implementations in other languages: [.NET](https://github.com/TwilioDevEd/verify
 
 ### Requirements
 
-- [Python](https://www.python.org/downloads) version >= **3.6.x**
+- [Python](https://www.python.org/downloads) version >= **3.7.x**
 - Twilio account - [sign up](https://www.twilio.com/try-twilio)
 - Verify service - [create](https://www.twilio.com/console/verify/services)
 
