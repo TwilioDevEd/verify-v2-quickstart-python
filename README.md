@@ -12,13 +12,9 @@
 
 Simple phone verification with Python, Flask, and Twilio Verify.
 
-[Read the full quickstart here](https://www.twilio.com/docs/verify/api-beta/quickstarts/python-flask)!
+[Read the full quickstart here](https://www.twilio.com/docs/verify/quickstarts/python-flask)!
 
-Implementations in other languages:
-
-| .NET | Java | Ruby | PHP | Node |
-| :--- | :--- | :----- | :-- | :--- |
-| [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-csharp) | [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-java)  | [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-rails)    | [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-php) | [Done](https://github.com/TwilioDevEd/verify-v2-quickstart-node)  |
+Implementations in other languages: [.NET](https://github.com/TwilioDevEd/verify-v2-quickstart-csharp) | [Java](https://github.com/TwilioDevEd/verify-v2-quickstart-java)  | [Ruby](https://github.com/TwilioDevEd/verify-v2-quickstart-rails)    | [PHP](https://github.com/TwilioDevEd/verify-v2-quickstart-php) | [Node](https://github.com/TwilioDevEd/verify-v2-quickstart-node)
 
 <!--
 ### How it works
@@ -30,20 +26,20 @@ Implementations in other languages:
 
 ### Requirements
 
-- [Python](https://www.python.org/downloads) version >= **3.6.x**.
-- A Twilio account - [sign up](https://www.twilio.com/try-twilio)
+- [Python](https://www.python.org/downloads) version >= **3.7.x**
+- Twilio account - [sign up](https://www.twilio.com/try-twilio)
+- Verify service - [create](https://www.twilio.com/console/verify/services)
 
 ### Twilio Account Settings
 
-This application should give you a ready-made starting point for writing your
-own appointment reminder application. Before we begin, we need to collect
+This application gives a ready-made starting point for writing your own registration flow using phone authentication. Before we begin, we need to collect
 all the config values we need to run the application:
 
-| Config&nbsp;Value | Description                                                                                                                                                  |
-| :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Account&nbsp;Sid  | Your primary Twilio account identifier - find this [in the Console](https://www.twilio.com/console).                                                         |
-| Auth&nbsp;Token   | Used to authenticate - [just like the above, you'll find this here](https://www.twilio.com/console).                                                         |
-| Verification&nbsp;Sid |  For Verification Service SID. You can generate one [here](https://www.twilio.com/console/verify/services) |
+| Config&nbsp;Value     | Description                                                                                                                    |
+|:----------------------|:-------------------------------------------------------------------------------------------------------------------------------|
+| Account&nbsp;SID      | Your primary Twilio account identifier, find this [in the Console](https://www.twilio.com/console)                             |
+| Auth&nbsp;Token       | Used to authenticate, you'll also find this [in the Console](https://www.twilio.com/console)                                   |
+| Verification&nbsp;SID | Your verification service identifier, find this or create a new service [here](https://www.twilio.com/console/verify/services) |
 
 ### Local development
 
@@ -69,6 +65,7 @@ After the above requirements have been met:
    ```
 
    See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables.
+
 
 4. Set the database
 
@@ -101,7 +98,7 @@ If you have [Docker](https://www.docker.com/) already installed on your machine,
 You can run the tests locally by typing:
 
 ```bash
-python manage.py test
+ python -m pytest
 ```
 
 ### Cloud deployment

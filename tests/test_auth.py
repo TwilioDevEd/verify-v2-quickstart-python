@@ -31,4 +31,4 @@ def test_create_user_logout_and_log_back_in(app, client):
     assert '/auth/login' in res.location
 
     res = client.post('/auth/login', data=dict(username='tanjiro', password='nezuko'), follow_redirects=True)
-    assert re.search('Congratulations, you have accessed the secret content!', res.get_data(as_text=True))
+    assert re.search('Congratulations, you have accessed the secret content with your verified account!', res.get_data(as_text=True))
