@@ -114,8 +114,8 @@ Please be aware that some of these might charge you for the usage or might make 
 **Some notes:**
 
 - For Heroku, please [check this](https://devcenter.heroku.com/articles/django-app-configuration) to properly configure the project for deployment.
-- [Glitch](https://glitch.com/) is not included because it only supports NodeJS officially. Instead, you can try [PythonAnywhere](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/) which is a similar alternative por Python projects.
-- [Zeit Now](https://zeit.co) is also not included because it uses a serverless architecture which doesn't work with frameworks such as Django.
+- [Glitch](https://glitch.com/) is not included because it only supports NodeJS officially. Instead, you can try [PythonAnywhere](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/) which is a similar alternative for Python projects.
+- [Vercel](https://vercel.com/) is also not included because it uses a serverless architecture which doesn't work with frameworks such as Django.
 
 ## Resources
 
