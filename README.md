@@ -98,7 +98,7 @@ If you have [Docker](https://www.docker.com/) already installed on your machine,
 You can run the tests locally by typing:
 
 ```bash
-python manage.py test
+ python -m pytest
 ```
 
 ### Cloud deployment
